@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical" 
+    android:background="@drawable/main_bg">
+	
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:text="请将标签贴近手机，NFC检测到的MAC如下："
+        />	
+        
+     <TextView
+        android:id="@+id/nfcMACinformationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="15dp"
+        />	  
+          
+     <TextView
+        android:id="@+id/BluetoothDeviceOnNFCConnectionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18dp"
+        
+        />	   
+     
+     
+     
+    
+     <Button 
+        android:id="@+id/nfcgMACinformationConfirmButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="确认"
+		android:onClick="nfcMACinformationConfirmButtonClicked"
+		android:background="@drawable/custom_button_bg"
+         />
+   
+        
+        
+
+</LinearLayout>

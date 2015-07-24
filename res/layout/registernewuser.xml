@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新用户注册：" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/border"
+        android:padding="5dp" >
+
+        <com.hdu.yuan.heartrate.view.SingleWaveDisplayEcg
+            android:id="@+id/singlewavedisplayNewUser"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+ <TextView
+                 android:id="@+id/textView2"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignTop="@+id/singlewavedisplayecg"
+                 android:text="ECG波形："
+                 android:textColor="#0c14bb" />
+        <FrameLayout
+            android:id="@+id/maskPlayNewUser"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:alpha="0.8"
+            android:background="#030303" >
+
+            <Button
+                android:id="@+id/startReceiveNewUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/play_selector"
+                android:onClick="hideMaskAndRecNewUser" />
+
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/portraitNewUser"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:layout_gravity="center_horizontal|center"
+            android:layout_margin="5dp"
+            android:background="@drawable/yuna"
+            android:clickable="true"
+            android:onClick="takePhoto" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/portrait"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/border"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/edit_height"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="姓名:"
+                    android:textColor="#828282"
+                    android:textSize="@dimen/edit_text_height" />
+
+                <EditText
+                    android:id="@+id/nameEditNewUser"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edit_height"
+                    android:layout_gravity="center_vertical|center"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="请输入姓名"
+                    android:singleLine="true"
+                    android:textColorHint="#AAAAAA"
+                    android:textSize="@dimen/edit_edit_height" >
+
+                    <requestFocus />
+                </EditText>
+
+                <Button
+                    android:id="@+id/sexSelectorNewUser"
+                    android:layout_width="@dimen/edit_height"
+                    android:layout_height="@dimen/edit_height"
+                    android:background="@drawable/man"
+                    android:onClick="sexSelector" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/border"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/edit_height"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="年龄:"
+                    android:textColor="#828282"
+                    android:textSize="@dimen/edit_text_height" />
+
+                <EditText
+                    android:id="@+id/ageEditNewUser"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/edit_height"
+                    android:layout_gravity="center_vertical|center"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="请输入年龄"
+                    android:numeric="integer"
+                    android:singleLine="true"
+                    android:textColorHint="#AAAAAA"
+                    android:textSize="@dimen/edit_edit_height" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="45dp" >
+
+            <ProgressBar
+                android:id="@+id/progressBarNewUser"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="145dp"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/custom_button_bg"
+                android:progressDrawable="@drawable/progress_selector" />
+
+            <Button
+                android:id="@+id/startRecordNewUser"
+                android:layout_width="146dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/btn_selector"
+                android:onClick="startRecord"
+                android:text="开始注册"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="146dp"
+            android:layout_height="45dp" >
+
+            <Button
+                android:id="@+id/saveInfoNewUser"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/custom_button_bg"
+                android:onClick="saveInfo"
+                android:text="存储码本"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

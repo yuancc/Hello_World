@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/JustRegisterSaO2Button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_button_bg"
+        android:onClick="JustRegisterSaO2Click"
+        android:text="测量血氧"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/JustRegisterECGButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custom_button_bg"
+        android:onClick="JustRegisterECGClick"
+        android:text="测量心电"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/RegisterAllButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custom_button_bg"
+        android:onClick="RegisterAllClick"
+        android:text="测量所有"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="心电身份认证："
+        android:textColor="#FFFF00" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/border"
+        android:padding="5dp" >
+
+        <com.hdu.yuan.heartrate.view.SingleWaveDisplayEcg
+            android:id="@+id/singlewavedisplayIdentify"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <FrameLayout
+            android:id="@+id/maskPlayIdentify"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:alpha="0.8"
+            android:background="#030303" >
+
+            <Button
+                android:id="@+id/startReceiveIdentify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/play_selector" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp" >
+
+        <ProgressBar
+            android:id="@+id/progressBarIdentify"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/custom_button_bg"
+            android:progressDrawable="@drawable/progress_selector" />
+
+        <Button
+            android:id="@+id/startRecordIdentify"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn_selector"
+            android:text="@string/startIdentify"
+            android:onClick="startIdentifyonClick"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/resultIdentify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="尚未身份认证"
+        android:textColor="#FFFF00"
+        android:textSize="20dip" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+</LinearLayout>

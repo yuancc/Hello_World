@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+     <RelativeLayout
+        android:layout_width="fill_parent" 
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/item_selector"
+        >
+        <TextView
+            android:id="@+id/listViewItemDeviceNameTextView" 
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#CC3300"
+            android:text="设备名称："
+            />
+        
+        <TextView 
+         android:id="@+id/listViewItemMacAddressTextView"
+         android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_below="@id/listViewItemDeviceNameTextView"
+        android:layout_marginLeft="10dp"
+        android:textColor="#CC3300"
+        android:text="MAC地址："
+        />
+        
+    </RelativeLayout>
+        
+</LinearLayout>

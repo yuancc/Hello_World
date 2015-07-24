@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hdu.yuan.heartrate"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+    <!-- NFC权限 -->
+     <uses-permission android:name="android.permission.NFC"></uses-permission>
+	<!-- 使用网络功能所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 摄像头权限 SD卡读写权限 -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:name="com.hdu.yuan.heartrate.ECGApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar"
+         >
+        <!-- android:theme="@android:style/Theme.NoTitleBar",使Activity的View界面全屏,隐藏Title栏-->
+        <activity
+            android:label="@string/app_name"
+            android:name="com.hdu.yuan.heartrate.MainTabActivity" 
+            android:screenOrientation="portrait">
+           
+            <!-- android:screenOrientation="landscape"是限制此页面横屏显示 -->
+            <!-- android:screenOrientation="portrait" 是限制此页面竖屏显示 -->
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name="com.hdu.yuan.heartrate.BluetoothConnectActivity" 
+            android:screenOrientation="portrait">
+        </activity>
+         <activity
+            android:label="蓝牙配对控制"
+            android:name="com.hdu.yuan.heartrate.BluetoothConnectionNfcConfirm" 
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.RegisterActivity"
+            android:label="@string/title_activity_register" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.RecordActivity"
+            android:label="@string/title_activity_record" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.SplashActivity"
+            android:label="@string/title_activity_splash" 
+            android:screenOrientation="portrait">
+        </activity> 
+         <activity
+            android:name="com.hdu.yuan.heartrate.RegisterNewUserActivity"
+            android:screenOrientation="portrait">
+        </activity> 
+        <activity
+            android:name="com.hdu.yuan.heartrate.RegisterModelActivityGroup"
+            android:screenOrientation="portrait">
+        </activity>      
+        <activity
+            android:name="com.hdu.yuan.heartrate.ChooseRegisterModelActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.JustRegisterSaO2Activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.JustRegisterECGActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.RegisterAllActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.AdministrationActivityGroup"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.AdministrationActivityFirst"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.AdministrationActivitySecond"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.hdu.yuan.heartrate.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+           	<intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+    </application>
+	
+</manifest>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     >
+	
+    
+    <ImageView 
+        android:id="@+id/splash_background"  
+        android:layout_width="fill_parent"  
+        android:layout_height="fill_parent"  
+        android:layout_alignParentTop="true"  
+        android:layout_centerHorizontal="true"  
+        android:scaleType="fitXY"  
+        android:src="@drawable/welcomebackground"
+        />
+
+	<TextView
+	    android:id="@+id/splash_textViewBottom"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="158dp"
+	    android:text="健康快乐每一天"
+	    android:textColor="#7FFFFF"
+	    android:textSize="20dp" />
+
+	<ImageView
+	    android:id="@+id/splash_image"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/splash_textViewBottom"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="42dp"
+	    android:src="@drawable/welcome_logo" />
+
+	<TextView
+	    android:id="@+id/splash_textViewFirst"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/splash_image"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="65dp"
+	    android:text="基于心电身份识别血氧监护系统"
+	    android:textColor="#7FFFFF"
+	    android:textSize="22dp" />
+<!-- android:text="基于心电身份识别血氧监护系统" -->
+</RelativeLayout>

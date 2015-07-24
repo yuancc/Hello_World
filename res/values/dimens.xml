@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+	<dimen name="tab_height">48dp</dimen>
+	<dimen name="img_width">72px</dimen>
+	<dimen name="img_width2">77px</dimen>
+	<dimen name="img_height">72px</dimen>
+	<dimen name="edit_height">35dp</dimen>
+	<dimen name="edit_text_height">20dp</dimen>
+	<dimen name="edit_edit_height">18dp</dimen>
+	<dimen name="result_display">22dp</dimen>
+	<dimen name="result_height">25dp</dimen>
+	<dimen name="image_size">90dp</dimen>
+</resources>

@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordActivity"
+    android:orientation="vertical"
+    ><!-- android:background="#A9B9BD" -->
+
+	<com.hdu.yuan.heartrate.view.ScrollListView
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:layout_marginLeft="10dp"
+	     android:layout_marginRight="10dp"
+	    android:id="@+id/peopleList"
+	    android:divider="#3c3c3c"
+	    android:dividerHeight="1dp"></com.hdu.yuan.heartrate.view.ScrollListView>
+	    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="65dp"
+        >
+         <Button
+            android:id="@+id/startRegister"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="注册新用户" 
+            android:background="@drawable/custom_button_bg"
+            />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    ><!-- android:background="#A9B9BD" -->
+    
+	<com.hdu.yuan.heartrate.view.ScrollListView
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    android:layout_marginLeft="10dp"
+	     android:layout_marginRight="10dp"
+	    android:id="@+id/record_time_list"
+	    android:divider="#3c3c3c"
+	    
+	    android:layout_marginBottom="65dp"
+	    android:dividerHeight="1dp"></com.hdu.yuan.heartrate.view.ScrollListView>
+
+</LinearLayout>

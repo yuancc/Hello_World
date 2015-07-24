@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+     <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="数据库中已有登记用户如下："
+        />
+    
+    <ListView 
+        android:id="@+id/itemHoldListView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
+        android:cacheColorHint="#00000000" 
+       	android:divider="#FFFFFF" 
+    	android:dividerHeight="1dip"
+    />
+
+</LinearLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ android:background="#A9B9BD"
+    tools:context=".LoginActivity" >
+
+    <TableLayout
+        android:id="@+id/table1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rememberPw_checkbox_linearlayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" >
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="账号" 
+                android:textSize="23dp"
+                android:textColor="#FFFFFF"
+                />
+
+            <EditText
+                android:id="@+id/account_ev"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                 android:textColor="#000000"
+                 />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="密码" 
+                android:textSize="23dp"
+                 android:textColor="#FFFFFF"
+                />
+
+            <EditText
+                android:id="@+id/password_ev"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:password="true" 
+                 android:textColor="#000000"
+                />
+        </TableRow>
+        
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/login_button_linearlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rememberPw_checkbox_linearlayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+          
+            android:background="#95AEA0"
+            android:text="登录管理员账号" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rememberPw_checkbox_linearlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp" >
+
+        <CheckBox
+            android:id="@+id/autologin_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="35dp"
+            android:text="自动登录？"
+            android:textSize="15dp" />
+
+        <CheckBox
+            android:id="@+id/rememberPw_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/autologin_checkbox"
+            android:text="保存密码？"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
+     
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="管理员账户" 
+        android:textColor="#FFFFFF"/>
+
+</RelativeLayout>

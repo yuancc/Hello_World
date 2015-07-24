@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    >
+<!--android:layout_height="320dp"  -->
+   <LinearLayout
+       android:id="@+id/displayspace"
+       android:layout_width="fill_parent"
+       android:layout_height="0px"
+       android:layout_weight="9"   
+       android:layout_alignParentTop="true"
+       android:layout_margin="5dp"
+       android:background="#EDEDED"
+       android:orientation="vertical" >
+      
+    <RelativeLayout
+        android:id="@+id/relative_top"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+
+        android:layout_weight="1"
+        android:background="#95AEA0"
+        android:padding="5dp" >
+
+        <com.hdu.yuan.heartrate.view.SingleWaveDisplay
+            android:id="@+id/singlewavedisplay"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <FrameLayout
+            android:id="@+id/maskPlay"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:alpha="0.8"
+            android:background="#030303" >
+
+            <Button
+                android:id="@+id/startReceive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/play_selector"
+                android:onClick="hideMaskAndRec" />
+        </FrameLayout>
+    </RelativeLayout>
+    
+     <RelativeLayout
+        android:id="@+id/RelativeLayoutecg"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:background="#95AEA0"
+        android:padding="5dp" >
+
+        <com.hdu.yuan.heartrate.view.SingleWaveDisplayEcg
+            android:id="@+id/singlewavedisplayecg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <FrameLayout
+            android:id="@+id/maskPlayecg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:alpha="0.8"
+            android:background="#030303" >
+
+            <!--  <Button
+                android:id="@+id/startReceiveecg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/play_selector"
+                android:onClick="hideMaskAndRececg" />-->
+        </FrameLayout>
+    </RelativeLayout>
+</LinearLayout>
+
+<!-- 头像 测量参数 分配 -->
+
+    <RelativeLayout
+        android:id="@+id/photoLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="3"
+        android:layout_below="@+id/displayspace"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+        <Gallery
+            android:id="@+id/imagesGallery"
+            android:layout_width="128dp"
+            android:layout_height="@dimen/image_size"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" 
+             />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignBottom="@+id/imagesGallery"
+            android:layout_alignParentRight="true"
+             >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_weight="1"            
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Oxygen"
+                    android:textColor="#030303"
+                    android:textSize="@dimen/result_display" />
+
+                <TextView
+                    android:id="@+id/xueyang"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0000EE"
+                    android:textSize="@dimen/result_display" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Pulse"
+                    android:textColor="#030303"
+                    android:textSize="@dimen/result_display" />
+
+                <TextView
+                    android:id="@+id/maibo"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0000EE"
+                    android:textSize="@dimen/result_display" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Temperature"
+                    android:textColor="#030303"
+                    android:textSize="@dimen/result_display" />
+
+                <TextView
+                    android:id="@+id/tiwen"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0000EE"
+                    android:textSize="@dimen/result_display" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- 显示时间分配 -->
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:orientation="horizontal" >
+		<TextView 
+		    android:id="@+id/surrenttime"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center"
+		    android:text="时间："
+		    android:textSize="20sp"
+		    android:layout_marginLeft="20dp"
+		    android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/timeRegister"
+            android:layout_width="0px"
+            android:layout_weight="2"
+		    android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#030303"
+            android:textSize="20sp" />
+    </LinearLayout>
+<!-- 存储分配 -->
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:textColor="#030303"
+                android:text="本地" >
+            </CheckBox>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ProgressBar
+                    android:id="@+id/progressBar1"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/aa_button_gray_normal"
+                    android:progressDrawable="@drawable/progress_selector" />
+
+                <Button
+                    android:id="@+id/startRecord"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="#95AEA0"
+                    android:onClick="startRecord"
+                    android:text="开始存储" 
+                    android:textSize="20sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+      
+    </RelativeLayout>
+     <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dip" 
+                android:layout_gravity="center_horizontal|center">
+	   		
+        </LinearLayout>
+</LinearLayout>

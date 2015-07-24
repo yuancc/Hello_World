@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    tools:context=".BluetoothActivity"
+    android:orientation="vertical">
+
+	<LinearLayout 
+			        android:layout_width="fill_parent" 
+			        android:layout_height="wrap_content"
+			        android:gravity="center_vertical"
+			        android:orientation="vertical">
+			            <Button
+					        android:id="@+id/search_blue"
+					        android:layout_width="120dp"
+					        android:layout_height="wrap_content"
+					        android:layout_gravity="center"
+					        android:background="@drawable/custom_button_bg"
+					        android:onClick="ConnectByBluetoochClick"
+					        android:text="搜索蓝牙"
+					        android:textSize="20dp"></Button>
+			            <Button
+					        android:id="@+id/Directconnect"
+					        android:layout_width="120dp"
+					        android:layout_height="wrap_content"
+					        android:layout_gravity="center"
+					        android:background="@drawable/custom_button_bg"
+					        android:onClick="ConnectDirectClick"
+					        android:text="直接连接"
+					        android:textSize="20dp"></Button>
+			            <Button
+					        android:id="@+id/nfcconnect"
+					        android:layout_width="120dp"
+					        android:layout_height="wrap_content"
+					        android:layout_gravity="center"
+					        android:background="@drawable/custom_button_bg"
+					        android:onClick="ConnectByNFCClick"
+					        android:text="NFC简化连接"
+					        android:textSize="20dp"></Button>
+			      </LinearLayout>
+			 <LinearLayout 
+			     android:layout_width="fill_parent" 
+			     android:background="#8B8B7A"
+			     android:layout_height="2px"
+			     ></LinearLayout>
+			 <FrameLayout
+			     android:layout_width="match_parent"
+			     android:layout_height="wrap_content">
+			     	<ListView 
+					        android:id="@+id/DeviceListView"
+					        android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+					        android:listSelector="@drawable/list_item_bg"
+					        android:cacheColorHint="@android:color/transparent"
+					       	android:divider="#CDC5BF" 
+					    	android:dividerHeight="1dip"/>
+			     	<ProgressBar 
+						    android:id="@+id/waiting"
+						    android:layout_width="wrap_content"
+						    android:layout_height="wrap_content"
+						    style="?android:attr/progressBarStyle"
+						    android:layout_gravity="center"
+						    android:visibility="gone" />
+			 </FrameLayout>
+
+</LinearLayout>

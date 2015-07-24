@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- android:layout_height="320dp" -->
+
+    <LinearLayout
+        android:id="@+id/displayspace"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:layout_weight="9"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/relative_top"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:background="@drawable/basic_information_bg"
+            android:padding="5dp" >
+
+            <com.hdu.yuan.heartrate.view.SingleWaveDisplay
+                android:id="@+id/singlewavedisplaySaO2ofAll"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/singlewavedisplayecg"
+                android:text="脉搏波波形："
+                android:textColor="#0000EE" />
+
+            <FrameLayout
+                android:id="@+id/maskPlaySaO2ofAll"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="2dp"
+                android:alpha="0.8"
+                android:background="#030303" >
+
+                <Button
+                    android:id="@+id/startReceiveAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/play_selector"
+                    android:onClick="hideMaskAndRecAll" />
+            </FrameLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayoutecg"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:background="@drawable/basic_information_bg"
+            android:padding="5dp" >
+
+            <com.hdu.yuan.heartrate.view.SingleWaveDisplayEcg
+                android:id="@+id/singlewavedisplayECGofAll"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/singlewavedisplayecg"
+                android:text="ECG波形："
+                android:textColor="#0000EE" />
+
+            <FrameLayout
+                android:id="@+id/maskPlayECGofAll"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="2dp"
+                android:alpha="0.8"
+                android:background="#030303" >
+            </FrameLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 头像 测量参数 分配 -->
+
+    <RelativeLayout
+        android:id="@+id/photoLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_below="@+id/displayspace"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="3.6"
+        android:orientation="horizontal" >
+
+        <Gallery
+            android:id="@+id/imagesGalleryofAll"
+            android:layout_width="128dp"
+            android:layout_height="@dimen/image_size"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imagesGallery"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Oxygen"
+                    android:textColor="#030303"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/xueyangAll"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF00"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Pulse"
+                    android:textColor="#030303"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/maiboAll"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF00"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0px"
+                android:layout_gravity="center_horizontal|center"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Temperature"
+                    android:textColor="#030303"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tiwenAll"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF00"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- 显示时间分配 -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/surrenttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="时间："
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/timeRegister"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:textColor="#030303"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <!-- 存储分配 -->
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1.6"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/cbAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22sp"
+                android:checked="false"
+                android:text="本地"
+                android:textColor="#030303" >
+            </CheckBox>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <ProgressBar
+                    android:id="@+id/progressBarAll"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="160dp"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/custom_button_bg"
+                    android:progressDrawable="@drawable/progress_selector" />
+
+                <Button
+                    android:id="@+id/startRecordAll"
+                    android:layout_width="158dp"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/btn_selector"
+                    android:onClick="startRecord"
+                    android:text="开始存储"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_gravity="center_horizontal|center" >
+    </LinearLayout>
+
+</LinearLayout>
